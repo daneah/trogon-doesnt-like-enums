@@ -17,7 +17,9 @@ class PowerpuffGirls(str, Enum):
 
 
 @app.command()
-def hello_with_option_with_default(name: Annotated[PowerpuffGirls, typer.Option("--name", "-n")] = PowerpuffGirls.BLOSSOM):
+def hello_with_option_with_default(
+    name: Annotated[PowerpuffGirls, typer.Option("--name", "-n")] = PowerpuffGirls.BLOSSOM
+):
     """Trogon doesn't like this one"""
     print(f"Hello, {name.value}!")
 
