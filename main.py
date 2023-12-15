@@ -37,6 +37,12 @@ def hello_with_argument(name: Annotated[PowerpuffGirls, typer.Argument()]):
 
 
 @app.command()
+def hello_with_argument_with_default(name: Annotated[PowerpuffGirls, typer.Argument()] = PowerpuffGirls.BLOSSOM):
+    """Trogon doesn't like this one"""
+    print(f"Hello, {name.value}!")
+
+
+@app.command()
 def tui(context: typer.Context):
     Trogon(get_group(app), click_context=context).run()
 
